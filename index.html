@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub &amp; Claude Code for Finance Managers</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top Navigation -->
+  <nav class="top-nav" id="topNav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">FinDev Guide</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#why">Why This Matters</a></li>
+        <li><a href="#github-basics">GitHub</a></li>
+        <li><a href="#claude-code">Claude Code</a></li>
+        <li><a href="#finance-workflows">Finance Workflows</a></li>
+        <li><a href="#cheatsheet">Cheat Sheet</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-tag">A Practical Tutorial</p>
+      <h1>GitHub &amp; Claude Code<br><span class="highlight">for Finance Managers</span></h1>
+      <p class="hero-sub">
+        Learn how version control and AI-assisted coding can streamline budgets,
+        automate reports, and give you superpowers at a small software company.
+      </p>
+      <div class="hero-actions">
+        <a href="#github-basics" class="btn btn-primary">Start Learning</a>
+        <a href="#finance-workflows" class="btn btn-outline">See Finance Use Cases</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Why This Matters -->
+  <section class="section" id="why">
+    <div class="container">
+      <h2 class="section-title">Why Should a Finance Manager Care?</h2>
+      <p class="section-intro">
+        Modern finance teams in software companies sit at the intersection of code
+        and capital. Understanding the tools your engineering team uses &mdash; and
+        leveraging AI to handle your own data tasks &mdash; is a career multiplier.
+      </p>
+      <div class="card-grid three-col">
+        <div class="card">
+          <div class="card-icon">&#128200;</div>
+          <h3>Transparent Change Tracking</h3>
+          <p>
+            GitHub tracks every change to spreadsheets, scripts, and config files.
+            Know exactly who changed that pricing model and when.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#129302;</div>
+          <h3>AI-Powered Automation</h3>
+          <p>
+            Claude Code can write Python scripts to clean data, generate reports,
+            and automate month-end reconciliation &mdash; no CS degree needed.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128101;</div>
+          <h3>Better Cross-Team Collaboration</h3>
+          <p>
+            Speak the same language as your dev team. Review budgeting tool PRs,
+            file issues for feature requests, and participate in code reviews.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GitHub Basics -->
+  <section class="section section-alt" id="github-basics">
+    <div class="container">
+      <h2 class="section-title">Part 1: GitHub Basics</h2>
+      <p class="section-intro">
+        GitHub is a platform for storing, tracking, and collaborating on files
+        using <strong>Git</strong>, a version control system. Think of it as
+        &ldquo;Track Changes&rdquo; for everything &mdash; not just Word documents.
+      </p>
+
+      <!-- Concept: Repository -->
+      <div class="lesson" id="lesson-repo">
+        <div class="lesson-header">
+          <span class="lesson-number">1.1</span>
+          <h3>Repositories (Repos)</h3>
+        </div>
+        <div class="lesson-body">
+          <p>
+            A <strong>repository</strong> is a project folder hosted on GitHub.
+            It contains all of your project files plus the complete history of
+            changes made to each file.
+          </p>
+          <div class="analogy">
+            <strong>Finance analogy:</strong> A repo is like a shared drive folder
+            for your annual budget &mdash; but one that remembers every draft,
+            every edit, and who made each change.
+          </div>
+          <div class="code-block">
+            <div class="code-label">Creating a new repo from the command line</div>
+<pre><code>git init my-budget-project
+cd my-budget-project
+git remote add origin https://github.com/your-org/my-budget-project.git</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concept: Commits -->
+      <div class="lesson" id="lesson-commit">
+        <div class="lesson-header">
+          <span class="lesson-number">1.2</span>
+          <h3>Commits</h3>
+        </div>
+        <div class="lesson-body">
+          <p>
+            A <strong>commit</strong> is a snapshot of your files at a point in
+            time. Each commit has a message describing what changed.
+          </p>
+          <div class="analogy">
+            <strong>Finance analogy:</strong> Each commit is like a journal entry
+            in your general ledger &mdash; a permanent record of a specific
+            transaction (change) with a description.
+          </div>
+          <div class="code-block">
+            <div class="code-label">Making a commit</div>
+<pre><code># Stage changes
+git add q3-forecast.xlsx
+
+# Commit with a descriptive message
+git commit -m "Update Q3 forecast with revised revenue projections"</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concept: Branches -->
+      <div class="lesson" id="lesson-branch">
+        <div class="lesson-header">
+          <span class="lesson-number">1.3</span>
+          <h3>Branches</h3>
+        </div>
+        <div class="lesson-body">
+          <p>
+            A <strong>branch</strong> lets you work on a separate copy of the
+            project without affecting the main version. When you&rsquo;re done,
+            you merge your branch back in.
+          </p>
+          <div class="analogy">
+            <strong>Finance analogy:</strong> Branches are like creating a &ldquo;what-if&rdquo;
+            scenario in your financial model. You explore a different assumption
+            set without touching the approved baseline.
+          </div>
+          <div class="code-block">
+            <div class="code-label">Working with branches</div>
+<pre><code># Create and switch to a new branch
+git checkout -b feature/new-pricing-model
+
+# Do your work, commit, then merge back
+git checkout main
+git merge feature/new-pricing-model</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concept: Pull Requests -->
+      <div class="lesson" id="lesson-pr">
+        <div class="lesson-header">
+          <span class="lesson-number">1.4</span>
+          <h3>Pull Requests (PRs)</h3>
+        </div>
+        <div class="lesson-body">
+          <p>
+            A <strong>pull request</strong> is a proposal to merge changes from
+            one branch into another. Team members review the changes, leave
+            comments, and approve before the merge happens.
+          </p>
+          <div class="analogy">
+            <strong>Finance analogy:</strong> A PR is like submitting a budget
+            amendment for approval. Stakeholders review the line items, ask
+            questions, request adjustments, and then sign off.
+          </div>
+          <div class="code-block">
+            <div class="code-label">Creating a PR with the GitHub CLI</div>
+<pre><code>gh pr create \
+  --title "Add Q4 expense projections" \
+  --body "Includes updated headcount costs and software licenses."</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concept: Issues -->
+      <div class="lesson" id="lesson-issues">
+        <div class="lesson-header">
+          <span class="lesson-number">1.5</span>
+          <h3>Issues</h3>
+        </div>
+        <div class="lesson-body">
+          <p>
+            <strong>Issues</strong> are used to track bugs, feature requests, and
+            tasks. They can be assigned, labeled, and linked to pull requests.
+          </p>
+          <div class="analogy">
+            <strong>Finance analogy:</strong> Issues are like line items on an
+            action-item list from your monthly finance meeting &mdash; tracked,
+            assigned, and closed when resolved.
+          </div>
+          <div class="code-block">
+            <div class="code-label">Creating an issue from the CLI</div>
+<pre><code>gh issue create \
+  --title "Discrepancy in March payroll report" \
+  --body "Row 42 shows duplicate entry for contractor payment." \
+  --label "bug,finance"</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick reference table -->
+      <div class="table-wrap">
+        <h3>GitHub Vocabulary Quick Reference</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>What It Means</th>
+              <th>Finance Equivalent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Repository</td><td>Project folder with full history</td><td>Shared budget folder with audit trail</td></tr>
+            <tr><td>Commit</td><td>Saved snapshot of changes</td><td>Journal entry</td></tr>
+            <tr><td>Branch</td><td>Parallel version of the project</td><td>What-if scenario</td></tr>
+            <tr><td>Pull Request</td><td>Proposal to merge changes</td><td>Budget amendment for approval</td></tr>
+            <tr><td>Merge</td><td>Combining two branches</td><td>Consolidating a scenario into the master budget</td></tr>
+            <tr><td>Clone</td><td>Download a full copy of a repo</td><td>Getting a local copy of the shared drive</td></tr>
+            <tr><td>Fork</td><td>Your own copy of someone else's repo</td><td>Creating your own version of a template</td></tr>
+            <tr><td>Issue</td><td>A tracked task or bug</td><td>Action item from a finance meeting</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Claude Code Section -->
+  <section class="section" id="claude-code">
+    <div class="container">
+      <h2 class="section-title">Part 2: Claude Code Basics</h2>
+      <p class="section-intro">
+        <strong>Claude Code</strong> is Anthropic's AI-powered coding assistant
+        that runs in your terminal. It can read your files, write code, run
+        commands, and help you build things &mdash; all through natural language.
+      </p>
+
+      <!-- What is Claude Code -->
+      <div class="lesson" id="lesson-what-cc">
+        <div class="lesson-header">
+          <span class="lesson-number">2.1</span>
+          <h3>What Is Claude Code?</h3>
+        </div>
+        <div class="lesson-body">
+          <p>
+            Claude Code is a CLI (command-line interface) tool that brings the
+            power of Claude, Anthropic's AI, directly into your development
+            workflow. You type what you want in plain English, and Claude Code
+            reads your project, writes or edits files, and runs commands.
+          </p>
+          <div class="feature-list">
+            <div class="feature">
+              <span class="feature-icon">&#128194;</span>
+              <div>
+                <strong>Reads your codebase</strong>
+                <p>Understands your project structure, files, and context.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">&#9999;&#65039;</span>
+              <div>
+                <strong>Writes &amp; edits files</strong>
+                <p>Creates new files or modifies existing ones based on your instructions.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">&#9654;&#65039;</span>
+              <div>
+                <strong>Runs commands</strong>
+                <p>Executes shell commands, installs packages, runs scripts, and more.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">&#128256;</span>
+              <div>
+                <strong>Works with Git</strong>
+                <p>Commits changes, creates branches, and manages pull requests.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Getting started -->
+      <div class="lesson" id="lesson-install-cc">
+        <div class="lesson-header">
+          <span class="lesson-number">2.2</span>
+          <h3>Getting Started</h3>
+        </div>
+        <div class="lesson-body">
+          <div class="code-block">
+            <div class="code-label">Install Claude Code</div>
+<pre><code># Install globally via npm
+npm install -g @anthropic-ai/claude-code
+
+# Navigate to your project
+cd my-budget-project
+
+# Launch Claude Code
+claude</code></pre>
+          </div>
+          <p>
+            Once launched, you're in an interactive session. Just type what you
+            want Claude to do in plain English.
+          </p>
+          <div class="code-block">
+            <div class="code-label">Example: asking Claude Code to help</div>
+<pre><code>&gt; Read the CSV file in /data/expenses.csv and summarize
+  the top 5 expense categories by total amount.
+
+Claude Code will:
+  1. Read the file
+  2. Parse the CSV
+  3. Calculate totals by category
+  4. Print a summary for you</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Commands -->
+      <div class="lesson" id="lesson-cc-commands">
+        <div class="lesson-header">
+          <span class="lesson-number">2.3</span>
+          <h3>Essential Commands &amp; Patterns</h3>
+        </div>
+        <div class="lesson-body">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>You Type</th>
+                  <th>What Happens</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>claude</code></td>
+                  <td>Starts an interactive session in the current directory</td>
+                </tr>
+                <tr>
+                  <td><code>/help</code></td>
+                  <td>Shows available slash commands and usage tips</td>
+                </tr>
+                <tr>
+                  <td><code>/commit</code></td>
+                  <td>Stages and commits your changes with an AI-generated message</td>
+                </tr>
+                <tr>
+                  <td><code>Escape</code> key</td>
+                  <td>Cancels the current operation</td>
+                </tr>
+                <tr>
+                  <td><code># prompt</code></td>
+                  <td>Use the <code>CLAUDE.md</code> file to give Claude project context</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tip">
+            <strong>Tip:</strong> Create a <code>CLAUDE.md</code> file in your
+            project root to give Claude Code persistent context about your
+            project. For example: &ldquo;This repo contains monthly financial
+            reports in CSV format. The fiscal year starts April 1.&rdquo;
+          </div>
+        </div>
+      </div>
+
+      <!-- Claude Code + Git -->
+      <div class="lesson" id="lesson-cc-git">
+        <div class="lesson-header">
+          <span class="lesson-number">2.4</span>
+          <h3>Claude Code + Git Integration</h3>
+        </div>
+        <div class="lesson-body">
+          <p>
+            Claude Code works seamlessly with Git. You can ask it to handle your
+            entire Git workflow in plain language.
+          </p>
+          <div class="code-block">
+            <div class="code-label">Git operations via Claude Code</div>
+<pre><code>&gt; Create a new branch called "feature/q4-budget-updates",
+  add the changes I just made, and commit with a descriptive message.
+
+&gt; Show me what changed since the last commit.
+
+&gt; Create a pull request with a summary of all the changes
+  on this branch.</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Finance Workflows Section -->
+  <section class="section section-alt" id="finance-workflows">
+    <div class="container">
+      <h2 class="section-title">Part 3: Real Finance Workflows</h2>
+      <p class="section-intro">
+        Here are practical scenarios showing how a finance manager at a small
+        software company can combine GitHub and Claude Code to work smarter.
+      </p>
+
+      <!-- Workflow 1 -->
+      <div class="workflow">
+        <div class="workflow-header">
+          <span class="workflow-number">Workflow 1</span>
+          <h3>Automated Expense Report Generation</h3>
+        </div>
+        <div class="workflow-body">
+          <p class="workflow-scenario">
+            <strong>Scenario:</strong> Every month you export expense data from
+            your accounting tool as a CSV. You need to categorize, summarize,
+            and produce a PDF report for leadership.
+          </p>
+          <div class="workflow-steps">
+            <div class="step">
+              <span class="step-num">1</span>
+              <div>
+                <strong>Store your data in a GitHub repo</strong>
+                <p>Create a repo called <code>finance-reports</code> and push your CSV files there each month.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">2</span>
+              <div>
+                <strong>Ask Claude Code to build the script</strong>
+                <div class="code-block compact">
+<pre><code>&gt; Write a Python script that reads data/expenses-2026-01.csv,
+  groups expenses by category, calculates totals and percentages,
+  and outputs a formatted markdown summary report.</code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">3</span>
+              <div>
+                <strong>Review, commit, and reuse</strong>
+                <p>Claude Code generates the script. Review it, commit via <code>/commit</code>, and reuse it every month with new data.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workflow 2 -->
+      <div class="workflow">
+        <div class="workflow-header">
+          <span class="workflow-number">Workflow 2</span>
+          <h3>Budget vs. Actuals Tracking</h3>
+        </div>
+        <div class="workflow-body">
+          <p class="workflow-scenario">
+            <strong>Scenario:</strong> You maintain a budget spreadsheet and want
+            to track how actuals compare over time with full version history.
+          </p>
+          <div class="workflow-steps">
+            <div class="step">
+              <span class="step-num">1</span>
+              <div>
+                <strong>Version your budget as CSV/JSON</strong>
+                <p>Store budget data in a machine-readable format in Git so every change is tracked.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">2</span>
+              <div>
+                <strong>Use Claude Code for variance analysis</strong>
+                <div class="code-block compact">
+<pre><code>&gt; Compare budget.csv and actuals-jan.csv. Show me every
+  line item where actuals exceed budget by more than 10%.
+  Format the output as a table.</code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">3</span>
+              <div>
+                <strong>Track changes via pull requests</strong>
+                <p>When updating the budget, create a branch, make changes, and submit a PR. Stakeholders review and approve before merge.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workflow 3 -->
+      <div class="workflow">
+        <div class="workflow-header">
+          <span class="workflow-number">Workflow 3</span>
+          <h3>Vendor Contract &amp; License Management</h3>
+        </div>
+        <div class="workflow-body">
+          <p class="workflow-scenario">
+            <strong>Scenario:</strong> Your company uses dozens of SaaS tools.
+            You need to track renewal dates, costs, and license counts.
+          </p>
+          <div class="workflow-steps">
+            <div class="step">
+              <span class="step-num">1</span>
+              <div>
+                <strong>Maintain a vendor registry in Git</strong>
+                <p>Keep a <code>vendors.json</code> file with vendor name, cost, renewal date, and license count.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">2</span>
+              <div>
+                <strong>Ask Claude Code for renewal alerts</strong>
+                <div class="code-block compact">
+<pre><code>&gt; Read vendors.json and list all vendors with renewal dates
+  in the next 60 days. Include the annual cost and flag
+  anything over $10,000 for renegotiation review.</code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">3</span>
+              <div>
+                <strong>Automate with GitHub Actions</strong>
+                <p>Set up a GitHub Action that runs the renewal check script weekly and opens an issue when renewals are approaching.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workflow 4 -->
+      <div class="workflow">
+        <div class="workflow-header">
+          <span class="workflow-number">Workflow 4</span>
+          <h3>Financial Dashboard Prototyping</h3>
+        </div>
+        <div class="workflow-body">
+          <p class="workflow-scenario">
+            <strong>Scenario:</strong> You want a simple internal dashboard to
+            visualize monthly revenue, burn rate, and runway &mdash; without
+            waiting for the engineering team.
+          </p>
+          <div class="workflow-steps">
+            <div class="step">
+              <span class="step-num">1</span>
+              <div>
+                <strong>Describe what you need to Claude Code</strong>
+                <div class="code-block compact">
+<pre><code>&gt; Build an HTML dashboard that reads data from
+  financials.json and displays:
+  - Monthly revenue bar chart
+  - Burn rate trend line
+  - Runway calculation (cash / avg monthly burn)
+  Use Chart.js for the visualizations.</code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">2</span>
+              <div>
+                <strong>Iterate with Claude Code</strong>
+                <p>Ask Claude to refine colors, add filters, or include new metrics. Each change is a new commit.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num">3</span>
+              <div>
+                <strong>Deploy via GitHub Pages</strong>
+                <p>Push to GitHub and enable Pages for free hosting. Your dashboard is live at <code>your-org.github.io/finance-dashboard</code>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cheat Sheet -->
+  <section class="section" id="cheatsheet">
+    <div class="container">
+      <h2 class="section-title">Quick-Start Cheat Sheet</h2>
+      <p class="section-intro">
+        Copy-paste these commands to get going. Replace placeholders with your
+        actual project details.
+      </p>
+
+      <div class="cheatsheet-grid">
+        <div class="cheat-card">
+          <h4>Set Up a Finance Repo</h4>
+          <div class="code-block compact">
+<pre><code>mkdir finance-reports &amp;&amp; cd finance-reports
+git init
+echo "# Finance Reports" &gt; README.md
+git add . &amp;&amp; git commit -m "Initial commit"
+gh repo create your-org/finance-reports --private --push</code></pre>
+          </div>
+        </div>
+
+        <div class="cheat-card">
+          <h4>Daily Workflow</h4>
+          <div class="code-block compact">
+<pre><code># Pull latest changes
+git pull origin main
+
+# Start Claude Code session
+claude
+
+# Ask for help with your task
+&gt; Read this month's expense CSV and flag any
+  transactions over $5,000 that aren't in the
+  approved vendor list.</code></pre>
+          </div>
+        </div>
+
+        <div class="cheat-card">
+          <h4>Submit Changes for Review</h4>
+          <div class="code-block compact">
+<pre><code># Create a branch for your changes
+git checkout -b update/march-actuals
+
+# Use Claude Code to commit
+/commit
+
+# Push and create a PR
+git push -u origin update/march-actuals
+gh pr create --title "Add March actuals" \
+  --body "Updated actuals for March. See summary."</code></pre>
+          </div>
+        </div>
+
+        <div class="cheat-card">
+          <h4>CLAUDE.md for Finance Projects</h4>
+          <div class="code-block compact">
+<pre><code># CLAUDE.md - Project Context
+
+This repo contains monthly financial data for
+Acme Software Inc.
+
+- Fiscal year: April 1 - March 31
+- Currency: USD
+- Data format: CSV with headers
+- Key files:
+  - data/ - monthly expense and revenue CSVs
+  - scripts/ - Python analysis scripts
+  - reports/ - generated summaries</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Practices -->
+  <section class="section section-alt" id="best-practices">
+    <div class="container">
+      <h2 class="section-title">Best Practices for Finance Managers</h2>
+      <div class="practices-grid">
+        <div class="practice">
+          <div class="practice-do">DO</div>
+          <h4>Use private repositories</h4>
+          <p>Financial data is sensitive. Always use private repos and restrict access to authorized team members.</p>
+        </div>
+        <div class="practice">
+          <div class="practice-do">DO</div>
+          <h4>Write descriptive commit messages</h4>
+          <p>Future you (and auditors) will thank you. &ldquo;Update Q3 forecast with revised SaaS revenue&rdquo; beats &ldquo;changes&rdquo;.</p>
+        </div>
+        <div class="practice">
+          <div class="practice-do">DO</div>
+          <h4>Use branches for budget iterations</h4>
+          <p>Keep the approved budget on <code>main</code>. Explore changes on branches and merge only after approval.</p>
+        </div>
+        <div class="practice">
+          <div class="practice-do">DO</div>
+          <h4>Create a CLAUDE.md file</h4>
+          <p>Give Claude Code context about your project so it gives better, more relevant answers every session.</p>
+        </div>
+        <div class="practice">
+          <div class="practice-dont">DON'T</div>
+          <h4>Commit secrets or credentials</h4>
+          <p>Never put API keys, passwords, or tokens in your repo. Use a <code>.gitignore</code> file and environment variables.</p>
+        </div>
+        <div class="practice">
+          <div class="practice-dont">DON'T</div>
+          <h4>Store raw PII in repos</h4>
+          <p>Employee SSNs, bank accounts, etc. should not be in Git. Use anonymized or aggregated data instead.</p>
+        </div>
+        <div class="practice">
+          <div class="practice-dont">DON'T</div>
+          <h4>Skip code review on scripts</h4>
+          <p>Even if Claude Code wrote the script, have someone review it via a PR before running it on real financial data.</p>
+        </div>
+        <div class="practice">
+          <div class="practice-dont">DON'T</div>
+          <h4>Blindly trust AI output</h4>
+          <p>Always verify calculations and summaries against source data. AI is a powerful assistant, not a replacement for diligence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Glossary -->
+  <section class="section" id="glossary">
+    <div class="container">
+      <h2 class="section-title">Glossary</h2>
+      <div class="glossary-grid">
+        <div class="glossary-item">
+          <dt>CLI</dt>
+          <dd>Command Line Interface &mdash; a text-based way to interact with your computer. Claude Code runs in a CLI.</dd>
+        </div>
+        <div class="glossary-item">
+          <dt>Git</dt>
+          <dd>A distributed version control system that tracks changes to files over time.</dd>
+        </div>
+        <div class="glossary-item">
+          <dt>GitHub</dt>
+          <dd>A cloud platform built on Git for hosting repositories and collaborating with others.</dd>
+        </div>
+        <div class="glossary-item">
+          <dt>GitHub Actions</dt>
+          <dd>An automation feature in GitHub that can run scripts on a schedule or in response to events like pushes or PRs.</dd>
+        </div>
+        <div class="glossary-item">
+          <dt>GitHub Pages</dt>
+          <dd>Free static website hosting from a GitHub repository. Great for dashboards and documentation.</dd>
+        </div>
+        <div class="glossary-item">
+          <dt>Claude Code</dt>
+          <dd>Anthropic's AI coding assistant that runs in the terminal and helps with code, data, and automation tasks.</dd>
+        </div>
+        <div class="glossary-item">
+          <dt>CLAUDE.md</dt>
+          <dd>A markdown file in your project root that gives Claude Code persistent context about the project.</dd>
+        </div>
+        <div class="glossary-item">
+          <dt>PR (Pull Request)</dt>
+          <dd>A request to merge changes from one branch into another, with review and approval workflow.</dd>
+        </div>
+        <div class="glossary-item">
+          <dt>.gitignore</dt>
+          <dd>A file that tells Git which files or directories to exclude from version control (e.g., credentials, large binaries).</dd>
+        </div>
+        <div class="glossary-item">
+          <dt>npm</dt>
+          <dd>Node Package Manager &mdash; used to install JavaScript tools and libraries, including Claude Code.</dd>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Built as a learning resource for finance professionals working in
+        software companies. Not affiliated with GitHub or Anthropic.
+      </p>
+      <p class="footer-links">
+        <a href="https://docs.github.com" target="_blank" rel="noopener">GitHub Docs</a>
+        <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" rel="noopener">Claude Code Docs</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8679;</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
