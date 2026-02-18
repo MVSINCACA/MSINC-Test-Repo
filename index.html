@@ -3,784 +3,1193 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub &amp; Claude Code for Finance Managers</title>
+  <title>The Borton Family Cornwall Holiday Guide</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Top Navigation -->
-  <nav class="top-nav" id="topNav">
+
+  <!-- Splash / Loading -->
+  <div class="splash" id="splash">
+    <div class="splash-inner">
+      <div class="splash-wave"></div>
+      <h1 class="splash-title">The Borton Family</h1>
+      <p class="splash-sub">Cornwall Holiday Guide</p>
+      <div class="splash-loader"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="main-nav" id="mainNav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">FinDev Guide</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon">&#9875;</span> Borton Cornwall
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#why">Why This Matters</a></li>
-        <li><a href="#github-basics">GitHub</a></li>
-        <li><a href="#claude-code">Claude Code</a></li>
-        <li><a href="#finance-workflows">Finance Workflows</a></li>
-        <li><a href="#cheatsheet">Cheat Sheet</a></li>
+        <li><a href="#hero" data-section="hero">Home</a></li>
+        <li><a href="#map" data-section="map">Map</a></li>
+        <li><a href="#beaches" data-section="beaches">Beaches</a></li>
+        <li><a href="#walks" data-section="walks">Walks</a></li>
+        <li><a href="#padstow" data-section="padstow">Padstow</a></li>
+        <li><a href="#dining" data-section="dining">Dining</a></li>
+        <li><a href="#camping" data-section="camping">Camping</a></li>
+        <li><a href="#adventures" data-section="adventures">Adventures</a></li>
+        <li><a href="#tips" data-section="tips">Tips</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <header class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-parallax" id="heroParallax"></div>
+      <div class="hero-overlay"></div>
+    </div>
     <div class="hero-content">
-      <p class="hero-tag">A Practical Tutorial</p>
-      <h1>GitHub &amp; Claude Code<br><span class="highlight">for Finance Managers</span></h1>
-      <p class="hero-sub">
-        Learn how version control and AI-assisted coding can streamline budgets,
-        automate reports, and give you superpowers at a small software company.
-      </p>
-      <div class="hero-actions">
-        <a href="#github-basics" class="btn btn-primary">Start Learning</a>
-        <a href="#finance-workflows" class="btn btn-outline">See Finance Use Cases</a>
+      <p class="hero-tag handwritten">Est. A Very Long Time Ago...</p>
+      <h1 class="hero-title">The Borton Family<br><span class="highlight">Cornwall Holiday Guide</span></h1>
+      <p class="hero-subtitle">Your definitive guide to the best beaches, walks, pubs, restaurants and hidden gems along the glorious North Cornish Coast &mdash; from Padstow to Polzeath and everywhere in between.</p>
+      <div class="hero-cta">
+        <a href="#beaches" class="btn btn-primary">Explore Beaches</a>
+        <a href="#map" class="btn btn-secondary">View the Map</a>
+      </div>
+      <div class="hero-scroll-hint" id="scrollHint">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num" data-target="7">0</span>
+        <span class="stat-label">Stunning Beaches</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="12">0</span>
+        <span class="stat-label">Top Walks</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="15">0</span>
+        <span class="stat-label">Pubs &amp; Restaurants</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="100">0</span>
+        <span class="stat-label">% Family Approved</span>
       </div>
     </div>
   </header>
 
-  <!-- Why This Matters -->
-  <section class="section" id="why">
+  <!-- Interactive Map Section -->
+  <section class="section map-section" id="map">
     <div class="container">
-      <h2 class="section-title">Why Should a Finance Manager Care?</h2>
-      <p class="section-intro">
-        Modern finance teams in software companies sit at the intersection of code
-        and capital. Understanding the tools your engineering team uses &mdash; and
-        leveraging AI to handle your own data tasks &mdash; is a career multiplier.
-      </p>
-      <div class="card-grid three-col">
-        <div class="card">
-          <div class="card-icon">&#128200;</div>
-          <h3>Transparent Change Tracking</h3>
-          <p>
-            GitHub tracks every change to spreadsheets, scripts, and config files.
-            Know exactly who changed that pricing model and when.
-          </p>
+      <div class="section-header">
+        <p class="section-tag handwritten">Where to find us</p>
+        <h2>Our Corner of Cornwall</h2>
+        <p class="section-desc">The magical stretch of North Cornwall coast that the Borton family calls home every summer. Click on a location to learn more!</p>
+      </div>
+      <div class="map-container">
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-5.08%2C50.49%2C-4.85%2C50.59&layer=mapnik&marker=50.5413%2C-4.9353"
+            class="map-iframe"
+            loading="lazy"
+            title="North Cornwall Coast Map">
+          </iframe>
         </div>
-        <div class="card">
-          <div class="card-icon">&#129302;</div>
-          <h3>AI-Powered Automation</h3>
-          <p>
-            Claude Code can write Python scripts to clean data, generate reports,
-            and automate month-end reconciliation &mdash; no CS degree needed.
-          </p>
+        <div class="map-locations">
+          <h3>Key Locations</h3>
+          <div class="location-grid">
+            <button class="location-pin" data-location="padstow" onclick="showLocationInfo('padstow')">
+              <span class="pin-icon">&#128205;</span>
+              <span class="pin-label">Padstow</span>
+            </button>
+            <button class="location-pin" data-location="polzeath" onclick="showLocationInfo('polzeath')">
+              <span class="pin-icon">&#127754;</span>
+              <span class="pin-label">Polzeath</span>
+            </button>
+            <button class="location-pin" data-location="rock" onclick="showLocationInfo('rock')">
+              <span class="pin-icon">&#9973;</span>
+              <span class="pin-label">Rock</span>
+            </button>
+            <button class="location-pin" data-location="harlyn" onclick="showLocationInfo('harlyn')">
+              <span class="pin-icon">&#127958;</span>
+              <span class="pin-label">Harlyn Bay</span>
+            </button>
+            <button class="location-pin" data-location="constantine" onclick="showLocationInfo('constantine')">
+              <span class="pin-icon">&#127774;</span>
+              <span class="pin-label">Constantine Bay</span>
+            </button>
+            <button class="location-pin" data-location="motheriveys" onclick="showLocationInfo('motheriveys')">
+              <span class="pin-icon">&#9978;</span>
+              <span class="pin-label">Mother Ivey's</span>
+            </button>
+            <button class="location-pin" data-location="trevose" onclick="showLocationInfo('trevose')">
+              <span class="pin-icon">&#128674;</span>
+              <span class="pin-label">Trevose Head</span>
+            </button>
+            <button class="location-pin" data-location="trebetherick" onclick="showLocationInfo('trebetherick')">
+              <span class="pin-icon">&#127793;</span>
+              <span class="pin-label">Trebetherick</span>
+            </button>
+          </div>
         </div>
-        <div class="card">
-          <div class="card-icon">&#128101;</div>
-          <h3>Better Cross-Team Collaboration</h3>
-          <p>
-            Speak the same language as your dev team. Review budgeting tool PRs,
-            file issues for feature requests, and participate in code reviews.
-          </p>
+      </div>
+      <!-- Location Info Panel -->
+      <div class="location-info-panel" id="locationInfoPanel">
+        <button class="panel-close" onclick="closeLocationInfo()">&times;</button>
+        <div class="panel-content" id="panelContent"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beaches Section -->
+  <section class="section beaches-section" id="beaches">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag handwritten">Sandy toes &amp; salty hair</p>
+        <h2>The Best Beaches</h2>
+        <p class="section-desc">North Cornwall is blessed with some of the finest beaches in the UK. Here are the Borton family favourites, rated for the things that really matter.</p>
+      </div>
+
+      <!-- Beach Filter Tabs -->
+      <div class="filter-tabs" id="beachFilters">
+        <button class="filter-tab active" data-filter="all">All Beaches</button>
+        <button class="filter-tab" data-filter="surfing">Best for Surfing</button>
+        <button class="filter-tab" data-filter="family">Best for Families</button>
+        <button class="filter-tab" data-filter="scenic">Most Scenic</button>
+        <button class="filter-tab" data-filter="rockpools">Rock Pools</button>
+      </div>
+
+      <div class="beach-grid" id="beachGrid">
+
+        <!-- Polzeath -->
+        <div class="beach-card" data-tags="surfing,family,scenic">
+          <div class="card-image polzeath-bg">
+            <div class="card-badge">Family Favourite</div>
+            <div class="card-rating">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Polzeath Beach</h3>
+            <p>The jewel in the crown. A huge, golden sandy beach that's perfect for surfing, bodyboarding, and sandcastle-building. The surf school here is brilliant for beginners, and the beach cafe does a cracking bacon roll.</p>
+            <div class="card-meta">
+              <div class="meta-item">
+                <span class="meta-icon">&#127754;</span>
+                <span>Surfing: 9/10</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#128118;</span>
+                <span>Family: 10/10</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#127853;</span>
+                <span>Facilities: Great</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#128663;</span>
+                <span>Parking: Large car park</span>
+              </div>
+            </div>
+            <div class="card-tip">
+              <strong>Borton Top Tip:</strong> Get there before 10am in August or you'll be parking in Trelights! The Tubestation cafe up the hill does amazing pizzas in the evening.
+            </div>
+          </div>
+        </div>
+
+        <!-- Harlyn Bay -->
+        <div class="beach-card" data-tags="family,rockpools">
+          <div class="card-image harlyn-bg">
+            <div class="card-badge">Sheltered Gem</div>
+            <div class="card-rating">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Harlyn Bay</h3>
+            <p>When everywhere else is blown out, Harlyn saves the day. This north-facing bay is wonderfully sheltered from the prevailing south-westerlies. Gorgeous golden sand, brilliant rock pools at low tide, and just a short drive from Mother Ivey's.</p>
+            <div class="card-meta">
+              <div class="meta-item">
+                <span class="meta-icon">&#127754;</span>
+                <span>Surfing: 6/10</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#128118;</span>
+                <span>Family: 10/10</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#127853;</span>
+                <span>Facilities: Good</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#128663;</span>
+                <span>Parking: Car park above</span>
+              </div>
+            </div>
+            <div class="card-tip">
+              <strong>Borton Top Tip:</strong> At low tide, explore the rock pools on the left-hand side. The Harlyn Inn up the road does great pub food and is dog-friendly!
+            </div>
+          </div>
+        </div>
+
+        <!-- Constantine Bay -->
+        <div class="beach-card" data-tags="surfing,scenic">
+          <div class="card-image constantine-bg">
+            <div class="card-badge">Surfer's Paradise</div>
+            <div class="card-rating">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Constantine Bay</h3>
+            <p>A stunning, expansive beach with consistent surf and dramatic scenery. The beach is backed by the Constantine Bay golf course and feels wilder and less crowded than Polzeath. Watch out for the rip currents though &mdash; swim between the flags!</p>
+            <div class="card-meta">
+              <div class="meta-item">
+                <span class="meta-icon">&#127754;</span>
+                <span>Surfing: 8/10</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#128118;</span>
+                <span>Family: 7/10</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#127853;</span>
+                <span>Facilities: Basic</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#128663;</span>
+                <span>Parking: National Trust</span>
+              </div>
+            </div>
+            <div class="card-tip">
+              <strong>Borton Top Tip:</strong> Walk along the coast path south towards Treyarnon Bay at sunset &mdash; absolutely magical. The rock arch is a must-see!
+            </div>
+          </div>
+        </div>
+
+        <!-- Daymer Bay -->
+        <div class="beach-card" data-tags="family,scenic">
+          <div class="card-image daymer-bg">
+            <div class="card-badge">Calm &amp; Beautiful</div>
+            <div class="card-rating">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Daymer Bay</h3>
+            <p>Tucked inside the Camel Estuary near Trebetherick, Daymer Bay has calm, shallow water that's perfect for little ones. The setting is stunning with views across to Padstow. John Betjeman loved this place so much he's buried in the church just up the hill at St Enodoc.</p>
+            <div class="card-meta">
+              <div class="meta-item">
+                <span class="meta-icon">&#127754;</span>
+                <span>Surfing: 3/10</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#128118;</span>
+                <span>Family: 10/10</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#127853;</span>
+                <span>Facilities: Car park only</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#128663;</span>
+                <span>Parking: Daymer Lane</span>
+              </div>
+            </div>
+            <div class="card-tip">
+              <strong>Borton Top Tip:</strong> Walk from Daymer to Polzeath along the coast path via Pentire Point. One of the best walks in the area. Stop at St Enodoc Church on the way!
+            </div>
+          </div>
+        </div>
+
+        <!-- Treyarnon Bay -->
+        <div class="beach-card" data-tags="rockpools,scenic">
+          <div class="card-image treyarnon-bg">
+            <div class="card-badge">Hidden Treasure</div>
+            <div class="card-rating">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Treyarnon Bay</h3>
+            <p>A smaller, more intimate beach just south of Constantine. Famous for its incredible natural rock pool &mdash; a proper swimming pool carved out by the sea. At low tide it fills with crystal-clear water that's been warmed by the sun. Absolute magic for kids.</p>
+            <div class="card-meta">
+              <div class="meta-item">
+                <span class="meta-icon">&#127754;</span>
+                <span>Surfing: 5/10</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#128118;</span>
+                <span>Family: 8/10</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#127853;</span>
+                <span>Facilities: YHA nearby</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#128663;</span>
+                <span>Parking: Small car park</span>
+              </div>
+            </div>
+            <div class="card-tip">
+              <strong>Borton Top Tip:</strong> The natural rock pool is best about 2 hours after high tide as it drains. Bring snorkels &mdash; you'll spot crabs, anemones and even the odd fish!
+            </div>
+          </div>
+        </div>
+
+        <!-- Booby's Bay -->
+        <div class="beach-card" data-tags="scenic,surfing">
+          <div class="card-image boobys-bg">
+            <div class="card-badge">Wild &amp; Rugged</div>
+            <div class="card-rating">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Booby's Bay</h3>
+            <p>Just around the headland from Constantine, Booby's Bay feels like a secret. Accessible mainly from the coast path, it's a dramatic, cliff-backed beach that reveals itself spectacularly at low tide. Sometimes you'll spot the remains of an ancient petrified forest in the sand.</p>
+            <div class="card-meta">
+              <div class="meta-item">
+                <span class="meta-icon">&#127754;</span>
+                <span>Surfing: 7/10</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#128118;</span>
+                <span>Family: 5/10</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#127853;</span>
+                <span>Facilities: None</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#128663;</span>
+                <span>Parking: Constantine</span>
+              </div>
+            </div>
+            <div class="card-tip">
+              <strong>Borton Top Tip:</strong> Look for the dark stumps of the petrified forest exposed in the sand at very low tides &mdash; they're thousands of years old!
+            </div>
+          </div>
+        </div>
+
+        <!-- Hawker's Cove -->
+        <div class="beach-card" data-tags="family,scenic">
+          <div class="card-image hawkers-bg">
+            <div class="card-badge">Peaceful Escape</div>
+            <div class="card-rating">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Hawker's Cove</h3>
+            <p>A quiet, sheltered cove on the Padstow side of the Camel Estuary. Perfect for kayaking, paddleboarding, and gentle swimming. The old lifeboat station adds character. Walk here along the coast path from Padstow for a lovely afternoon escape from the crowds.</p>
+            <div class="card-meta">
+              <div class="meta-item">
+                <span class="meta-icon">&#127754;</span>
+                <span>Surfing: 1/10</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#128118;</span>
+                <span>Family: 9/10</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#127853;</span>
+                <span>Facilities: None</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">&#128663;</span>
+                <span>Parking: Walk from Padstow</span>
+              </div>
+            </div>
+            <div class="card-tip">
+              <strong>Borton Top Tip:</strong> Take the coast path from Padstow harbour &mdash; it's about a 20-minute walk. Pack a picnic and have the cove almost to yourselves!
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Walks Section -->
+  <section class="section walks-section" id="walks">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag handwritten">Put your boots on</p>
+        <h2>Best Walks</h2>
+        <p class="section-desc">The South West Coast Path runs right through our patch, and it's spectacular. Here are the Borton family's favourite walks, from gentle strolls to proper adventures.</p>
+      </div>
+
+      <!-- Difficulty Filter -->
+      <div class="filter-tabs" id="walkFilters">
+        <button class="filter-tab active" data-filter="all">All Walks</button>
+        <button class="filter-tab" data-filter="easy">Easy Strolls</button>
+        <button class="filter-tab" data-filter="moderate">Moderate</button>
+        <button class="filter-tab" data-filter="challenging">Challenging</button>
+      </div>
+
+      <div class="walks-timeline" id="walksTimeline">
+
+        <div class="walk-item" data-difficulty="easy">
+          <div class="walk-marker">
+            <span class="walk-number">1</span>
+          </div>
+          <div class="walk-content">
+            <div class="walk-header">
+              <h3>Camel Trail: Padstow to Wadebridge</h3>
+              <div class="walk-badges">
+                <span class="badge badge-easy">Easy</span>
+                <span class="badge badge-distance">5.5 miles one way</span>
+                <span class="badge badge-time">~2 hours</span>
+              </div>
+            </div>
+            <p>The classic! Follow the old railway line along the beautiful Camel Estuary. Flat, well-surfaced, and perfect for bikes too. Hire bikes in Padstow (try Trail Bike Hire) and cycle the whole route. Stop at the Camel Valley Vineyard for a sneaky wine tasting on the way back.</p>
+            <div class="walk-highlights">
+              <span>&#128692; Cycle-friendly</span>
+              <span>&#128054; Dog-friendly</span>
+              <span>&#127860; Cafes en route</span>
+              <span>&#128038; Birdwatching</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="walk-item" data-difficulty="moderate">
+          <div class="walk-marker">
+            <span class="walk-number">2</span>
+          </div>
+          <div class="walk-content">
+            <div class="walk-header">
+              <h3>Stepper Point Circuit</h3>
+              <div class="walk-badges">
+                <span class="badge badge-moderate">Moderate</span>
+                <span class="badge badge-distance">4 miles circular</span>
+                <span class="badge badge-time">~2 hours</span>
+              </div>
+            </div>
+            <p>Start from Hawker's Cove car park and follow the coast path out to Stepper Point with its iconic daymark tower. Stunning views across the Camel Estuary to Rock and Daymer Bay. On a clear day you can see for miles. Loop back via the inland path through the fields. Keep an eye out for seals in the water below!</p>
+            <div class="walk-highlights">
+              <span>&#128674; Daymark tower</span>
+              <span>&#127757; Panoramic views</span>
+              <span>&#129446; Seal spotting</span>
+              <span>&#127807; Wildflowers</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="walk-item" data-difficulty="moderate">
+          <div class="walk-marker">
+            <span class="walk-number">3</span>
+          </div>
+          <div class="walk-content">
+            <div class="walk-header">
+              <h3>Pentire Point from Polzeath</h3>
+              <div class="walk-badges">
+                <span class="badge badge-moderate">Moderate</span>
+                <span class="badge badge-distance">3.5 miles circular</span>
+                <span class="badge badge-time">~1.5 hours</span>
+              </div>
+            </div>
+            <p>Head north from Polzeath beach along the dramatic headland to Pentire Point. The Rumps (an Iron Age cliff castle) at the end are magnificent &mdash; jagged rocks jutting into the Atlantic with incredible coastal scenery. Watch for puffins in spring and early summer on the offshore rocks. Return via the Cornish Arms in New Polzeath for a well-earned pint.</p>
+            <div class="walk-highlights">
+              <span>&#127961; Iron Age fort</span>
+              <span>&#129436; Puffin spotting</span>
+              <span>&#127754; Dramatic cliffs</span>
+              <span>&#127866; Pub finish</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="walk-item" data-difficulty="easy">
+          <div class="walk-marker">
+            <span class="walk-number">4</span>
+          </div>
+          <div class="walk-content">
+            <div class="walk-header">
+              <h3>Daymer Bay to Rock via St Enodoc</h3>
+              <div class="walk-badges">
+                <span class="badge badge-easy">Easy</span>
+                <span class="badge badge-distance">2 miles one way</span>
+                <span class="badge badge-time">~45 mins</span>
+              </div>
+            </div>
+            <p>A lovely gentle walk starting at Daymer Bay, up through the dunes to the enchanting St Enodoc Church where poet John Betjeman is buried. The tiny church was once almost completely buried by sand! Continue through the golf course (watch for flying balls!) and down into Rock for an ice cream or the ferry across to Padstow.</p>
+            <div class="walk-highlights">
+              <span>&#9962; Historic church</span>
+              <span>&#127846; Ice cream in Rock</span>
+              <span>&#9962; Betjeman's grave</span>
+              <span>&#128674; Ferry to Padstow</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="walk-item" data-difficulty="challenging">
+          <div class="walk-marker">
+            <span class="walk-number">5</span>
+          </div>
+          <div class="walk-content">
+            <div class="walk-header">
+              <h3>Trevose Head &amp; Lighthouse Circuit</h3>
+              <div class="walk-badges">
+                <span class="badge badge-challenging">Challenging</span>
+                <span class="badge badge-distance">6 miles circular</span>
+                <span class="badge badge-time">~3 hours</span>
+              </div>
+            </div>
+            <p>Start from Mother Ivey's or Harlyn Bay and follow the coast path around the dramatic headland to Trevose Head Lighthouse. The views are breathtaking, taking in Booby's Bay, the lifeboat station, and on clear days you can see Tintagel. This is proper clifftop walking &mdash; exhilarating with the wind in your hair and the Atlantic crashing below.</p>
+            <div class="walk-highlights">
+              <span>&#128674; Lighthouse</span>
+              <span>&#127754; Dramatic cliffs</span>
+              <span>&#129446; Seal colonies</span>
+              <span>&#127774; Sunset views</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="walk-item" data-difficulty="moderate">
+          <div class="walk-marker">
+            <span class="walk-number">6</span>
+          </div>
+          <div class="walk-content">
+            <div class="walk-header">
+              <h3>Padstow to Stepper Point via War Memorial</h3>
+              <div class="walk-badges">
+                <span class="badge badge-moderate">Moderate</span>
+                <span class="badge badge-distance">5 miles circular</span>
+                <span class="badge badge-time">~2.5 hours</span>
+              </div>
+            </div>
+            <p>Leave Padstow harbour heading north, past the War Memorial with its commanding views over the town. Continue along the estuary with views across to Rock and down to Hawker's Cove. The path continues to Stepper Point before you can loop back. A brilliant walk that rewards you with fish and chips in Padstow harbour at the end.</p>
+            <div class="walk-highlights">
+              <span>&#127961; War Memorial</span>
+              <span>&#127757; Estuary views</span>
+              <span>&#128038; Wading birds</span>
+              <span>&#127833; Fish &amp; chips finish</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="walk-item" data-difficulty="easy">
+          <div class="walk-marker">
+            <span class="walk-number">7</span>
+          </div>
+          <div class="walk-content">
+            <div class="walk-header">
+              <h3>Rock to Padstow Ferry &amp; Harbour Walk</h3>
+              <div class="walk-badges">
+                <span class="badge badge-easy">Easy</span>
+                <span class="badge badge-distance">1 mile + ferry</span>
+                <span class="badge badge-time">~1 hour</span>
+              </div>
+            </div>
+            <p>Catch the Black Tor ferry from Rock to Padstow (runs every 20 minutes). Kids love the boat ride across the estuary! Wander around Padstow harbour, grab a Rick Stein's fish &amp; chips or a Chough Bakery pasty, and explore the old town. Take the ferry back with the sunset behind you for a perfect evening.</p>
+            <div class="walk-highlights">
+              <span>&#9973; Ferry ride</span>
+              <span>&#127833; Food galore</span>
+              <span>&#128118; Kid-friendly</span>
+              <span>&#127773; Evening magic</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Padstow Section -->
+  <section class="section padstow-section" id="padstow">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag handwritten">The jewel of North Cornwall</p>
+        <h2>Padstow</h2>
+        <p class="section-desc">The charming fishing harbour that's become a foodie destination without losing its soul. Here's the Borton guide to getting the most out of Padstow.</p>
+      </div>
+
+      <div class="padstow-grid">
+        <!-- Pubs -->
+        <div class="padstow-category">
+          <div class="category-header">
+            <span class="category-icon">&#127866;</span>
+            <h3>Best Pubs in Padstow</h3>
+          </div>
+          <div class="venue-list">
+            <div class="venue-card">
+              <h4>The London Inn</h4>
+              <div class="venue-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>A proper Cornish pub right in the centre of Padstow. Great selection of Cornish ales (try the Tribute or Proper Job), cosy atmosphere, and a fantastic beer garden out the back. Live music some evenings. The kind of pub where everyone ends up at some point.</p>
+              <div class="venue-tags">
+                <span>Real Ales</span>
+                <span>Beer Garden</span>
+                <span>Live Music</span>
+                <span>Dog Friendly</span>
+              </div>
+            </div>
+            <div class="venue-card">
+              <h4>The Shipwright's Inn</h4>
+              <div class="venue-rating">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+              <p>A lovely old pub tucked away on North Quay. Slightly less touristy than some of the harbour-front options. Good honest pub food, well-kept ales, and a warm welcome. The fish pie is legendary.</p>
+              <div class="venue-tags">
+                <span>Harbour Views</span>
+                <span>Pub Grub</span>
+                <span>Cosy</span>
+              </div>
+            </div>
+            <div class="venue-card">
+              <h4>The Golden Lion</h4>
+              <div class="venue-rating">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+              <p>Right on the harbour with a cracking elevated terrace for people-watching. The views across the estuary are gorgeous, especially at sunset. Good selection of gins and Cornish ciders. Gets lively in the evenings.</p>
+              <div class="venue-tags">
+                <span>Harbour Terrace</span>
+                <span>Sunset Views</span>
+                <span>Gins</span>
+              </div>
+            </div>
+            <div class="venue-card">
+              <h4>The Old Ship Hotel</h4>
+              <div class="venue-rating">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+              <p>A characterful old coaching inn on Mill Square. Flagstone floors, low beams, and a real fire in winter. The Sharp's Doom Bar is always in good nick. A good all-rounder that feels authentically Cornish.</p>
+              <div class="venue-tags">
+                <span>Historic</span>
+                <span>Real Fire</span>
+                <span>Character</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pubs Beyond Padstow -->
+        <div class="padstow-category">
+          <div class="category-header">
+            <span class="category-icon">&#127867;</span>
+            <h3>Pubs Beyond Padstow</h3>
+          </div>
+          <div class="venue-list">
+            <div class="venue-card">
+              <h4>The Cornish Arms, St Merryn</h4>
+              <div class="venue-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>Rick Stein's local! A proper village pub with an outstanding food menu. The curry night is brilliant, and the Sunday roast is worth booking ahead for. About 2 miles from Padstow &mdash; perfect after a Constantine Bay session.</p>
+              <div class="venue-tags">
+                <span>Rick Stein</span>
+                <span>Food</span>
+                <span>Village Pub</span>
+                <span>Book Ahead</span>
+              </div>
+            </div>
+            <div class="venue-card">
+              <h4>The Oyster Catcher, Polzeath</h4>
+              <div class="venue-rating">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+              <p>Perched above Polzeath with some of the best views of any pub in Cornwall. Great for a post-surf pint watching the sun go down. The food is excellent too &mdash; try the Camel Valley mussels.</p>
+              <div class="venue-tags">
+                <span>Sea Views</span>
+                <span>Post-Surf</span>
+                <span>Food</span>
+              </div>
+            </div>
+            <div class="venue-card">
+              <h4>The Mariners, Rock</h4>
+              <div class="venue-rating">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+              <p>Nathan Outlaw's pub in Rock. Relaxed, family-friendly, and the food is exceptional (as you'd expect from an Outlaw venue). The fish finger sandwich is oddly one of the best things you'll eat all holiday.</p>
+              <div class="venue-tags">
+                <span>Nathan Outlaw</span>
+                <span>Family Friendly</span>
+                <span>Top Food</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Padstow Highlights -->
+      <div class="padstow-highlights">
+        <h3 class="handwritten">Don't Miss in Padstow</h3>
+        <div class="highlights-grid">
+          <div class="highlight-item">
+            <span class="highlight-icon">&#128038;</span>
+            <h4>Prideaux Place</h4>
+            <p>Stunning Elizabethan manor house on the hill above Padstow with beautiful deer park gardens. Open for tours in summer &mdash; a rainy day favourite.</p>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">&#127856;</span>
+            <h4>Chough Bakery</h4>
+            <p>The best pasties in Cornwall? Quite possibly. The steak pasty is perfection. Get there early as they sell out! Also try the saffron buns.</p>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">&#128674;</span>
+            <h4>Black Tor Ferry</h4>
+            <p>The little passenger ferry across to Rock runs all day. A Padstow tradition &mdash; no visit is complete without a trip across the estuary.</p>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">&#127925;</span>
+            <h4>May Day 'Obby 'Oss</h4>
+            <p>If you're ever in Padstow on May 1st, the 'Obby 'Oss festival is extraordinary. The whole town goes wild with music, dancing and two decorated hobby horses parading through the streets. Ancient and unforgettable.</p>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">&#128704;</span>
+            <h4>Padstow Christmas Festival</h4>
+            <p>Rick Stein's Christmas Festival in December turns Padstow into a winter wonderland with celebrity chef demos, carol singing, and a real festive atmosphere.</p>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">&#127912;</span>
+            <h4>National Lobster Hatchery</h4>
+            <p>A fascinating little aquarium and conservation centre on the harbour. The kids can adopt a baby lobster! Great for a couple of hours, especially on a rainy day.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GitHub Basics -->
-  <section class="section section-alt" id="github-basics">
+  <!-- Dining Section -->
+  <section class="section dining-section" id="dining">
     <div class="container">
-      <h2 class="section-title">Part 1: GitHub Basics</h2>
-      <p class="section-intro">
-        GitHub is a platform for storing, tracking, and collaborating on files
-        using <strong>Git</strong>, a version control system. Think of it as
-        &ldquo;Track Changes&rdquo; for everything &mdash; not just Word documents.
-      </p>
-
-      <!-- Concept: Repository -->
-      <div class="lesson" id="lesson-repo">
-        <div class="lesson-header">
-          <span class="lesson-number">1.1</span>
-          <h3>Repositories (Repos)</h3>
-        </div>
-        <div class="lesson-body">
-          <p>
-            A <strong>repository</strong> is a project folder hosted on GitHub.
-            It contains all of your project files plus the complete history of
-            changes made to each file.
-          </p>
-          <div class="analogy">
-            <strong>Finance analogy:</strong> A repo is like a shared drive folder
-            for your annual budget &mdash; but one that remembers every draft,
-            every edit, and who made each change.
-          </div>
-          <div class="code-block">
-            <div class="code-label">Creating a new repo from the command line</div>
-<pre><code>git init my-budget-project
-cd my-budget-project
-git remote add origin https://github.com/your-org/my-budget-project.git</code></pre>
-          </div>
-        </div>
+      <div class="section-header">
+        <p class="section-tag handwritten">Feed the family</p>
+        <h2>Where to Eat</h2>
+        <p class="section-desc">North Cornwall has become one of the UK's top foodie destinations. From Michelin-starred fine dining to the best fish &amp; chips you've ever had, here's where the Bortons eat.</p>
       </div>
 
-      <!-- Concept: Commits -->
-      <div class="lesson" id="lesson-commit">
-        <div class="lesson-header">
-          <span class="lesson-number">1.2</span>
-          <h3>Commits</h3>
-        </div>
-        <div class="lesson-body">
-          <p>
-            A <strong>commit</strong> is a snapshot of your files at a point in
-            time. Each commit has a message describing what changed.
-          </p>
-          <div class="analogy">
-            <strong>Finance analogy:</strong> Each commit is like a journal entry
-            in your general ledger &mdash; a permanent record of a specific
-            transaction (change) with a description.
-          </div>
-          <div class="code-block">
-            <div class="code-label">Making a commit</div>
-<pre><code># Stage changes
-git add q3-forecast.xlsx
-
-# Commit with a descriptive message
-git commit -m "Update Q3 forecast with revised revenue projections"</code></pre>
-          </div>
-        </div>
+      <!-- Restaurant Filter -->
+      <div class="filter-tabs" id="diningFilters">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="finedining">Fine Dining</button>
+        <button class="filter-tab" data-filter="casual">Casual</button>
+        <button class="filter-tab" data-filter="takeaway">Takeaway</button>
+        <button class="filter-tab" data-filter="cafe">Cafes</button>
       </div>
 
-      <!-- Concept: Branches -->
-      <div class="lesson" id="lesson-branch">
-        <div class="lesson-header">
-          <span class="lesson-number">1.3</span>
-          <h3>Branches</h3>
-        </div>
-        <div class="lesson-body">
-          <p>
-            A <strong>branch</strong> lets you work on a separate copy of the
-            project without affecting the main version. When you&rsquo;re done,
-            you merge your branch back in.
-          </p>
-          <div class="analogy">
-            <strong>Finance analogy:</strong> Branches are like creating a &ldquo;what-if&rdquo;
-            scenario in your financial model. You explore a different assumption
-            set without touching the approved baseline.
-          </div>
-          <div class="code-block">
-            <div class="code-label">Working with branches</div>
-<pre><code># Create and switch to a new branch
-git checkout -b feature/new-pricing-model
+      <div class="dining-grid" id="diningGrid">
 
-# Do your work, commit, then merge back
-git checkout main
-git merge feature/new-pricing-model</code></pre>
+        <div class="dining-card" data-tags="finedining">
+          <div class="dining-header">
+            <h3>The Seafood Restaurant</h3>
+            <span class="dining-price">&pound;&pound;&pound;&pound;</span>
           </div>
+          <p class="dining-location">Padstow Harbour</p>
+          <p>Rick Stein's flagship restaurant. A Padstow institution serving the freshest seafood you'll find anywhere. The fruits de mer platter is spectacular. Book well in advance &mdash; this is a special occasion place.</p>
+          <div class="dining-tip">Splurge-worthy for an anniversary or birthday dinner.</div>
         </div>
-      </div>
 
-      <!-- Concept: Pull Requests -->
-      <div class="lesson" id="lesson-pr">
-        <div class="lesson-header">
-          <span class="lesson-number">1.4</span>
-          <h3>Pull Requests (PRs)</h3>
-        </div>
-        <div class="lesson-body">
-          <p>
-            A <strong>pull request</strong> is a proposal to merge changes from
-            one branch into another. Team members review the changes, leave
-            comments, and approve before the merge happens.
-          </p>
-          <div class="analogy">
-            <strong>Finance analogy:</strong> A PR is like submitting a budget
-            amendment for approval. Stakeholders review the line items, ask
-            questions, request adjustments, and then sign off.
+        <div class="dining-card" data-tags="casual">
+          <div class="dining-header">
+            <h3>Rick Stein's Fish &amp; Chips</h3>
+            <span class="dining-price">&pound;&pound;</span>
           </div>
-          <div class="code-block">
-            <div class="code-label">Creating a PR with the GitHub CLI</div>
-<pre><code>gh pr create \
-  --title "Add Q4 expense projections" \
-  --body "Includes updated headcount costs and software licenses."</code></pre>
-          </div>
+          <p class="dining-location">South Quay, Padstow</p>
+          <p>If the Seafood Restaurant is the tuxedo, this is the favourite pair of jeans. Brilliantly crispy battered fish, proper chunky chips, and mushy peas. Eat in or take away and sit on the harbour wall. Queue early or queue long!</p>
+          <div class="dining-tip">The takeaway queue moves faster. Grab it and eat on the harbour wall.</div>
         </div>
-      </div>
 
-      <!-- Concept: Issues -->
-      <div class="lesson" id="lesson-issues">
-        <div class="lesson-header">
-          <span class="lesson-number">1.5</span>
-          <h3>Issues</h3>
-        </div>
-        <div class="lesson-body">
-          <p>
-            <strong>Issues</strong> are used to track bugs, feature requests, and
-            tasks. They can be assigned, labeled, and linked to pull requests.
-          </p>
-          <div class="analogy">
-            <strong>Finance analogy:</strong> Issues are like line items on an
-            action-item list from your monthly finance meeting &mdash; tracked,
-            assigned, and closed when resolved.
+        <div class="dining-card" data-tags="finedining">
+          <div class="dining-header">
+            <h3>Paul Ainsworth at No. 6</h3>
+            <span class="dining-price">&pound;&pound;&pound;&pound;</span>
           </div>
-          <div class="code-block">
-            <div class="code-label">Creating an issue from the CLI</div>
-<pre><code>gh issue create \
-  --title "Discrepancy in March payroll report" \
-  --body "Row 42 shows duplicate entry for contractor payment." \
-  --label "bug,finance"</code></pre>
-          </div>
+          <p class="dining-location">Middle Street, Padstow</p>
+          <p>Michelin-starred magic in a beautiful Georgian townhouse. Paul Ainsworth creates incredible dishes that are inventive without being pretentious. The tasting menu is a journey. The "Fairground Tale" dessert is legendary.</p>
+          <div class="dining-tip">Their "Fairground Tale" dessert is an absolute must &mdash; a theatrical experience!</div>
         </div>
-      </div>
 
-      <!-- Quick reference table -->
-      <div class="table-wrap">
-        <h3>GitHub Vocabulary Quick Reference</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Term</th>
-              <th>What It Means</th>
-              <th>Finance Equivalent</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Repository</td><td>Project folder with full history</td><td>Shared budget folder with audit trail</td></tr>
-            <tr><td>Commit</td><td>Saved snapshot of changes</td><td>Journal entry</td></tr>
-            <tr><td>Branch</td><td>Parallel version of the project</td><td>What-if scenario</td></tr>
-            <tr><td>Pull Request</td><td>Proposal to merge changes</td><td>Budget amendment for approval</td></tr>
-            <tr><td>Merge</td><td>Combining two branches</td><td>Consolidating a scenario into the master budget</td></tr>
-            <tr><td>Clone</td><td>Download a full copy of a repo</td><td>Getting a local copy of the shared drive</td></tr>
-            <tr><td>Fork</td><td>Your own copy of someone else's repo</td><td>Creating your own version of a template</td></tr>
-            <tr><td>Issue</td><td>A tracked task or bug</td><td>Action item from a finance meeting</td></tr>
-          </tbody>
-        </table>
+        <div class="dining-card" data-tags="casual">
+          <div class="dining-header">
+            <h3>Prawn on the Lawn</h3>
+            <span class="dining-price">&pound;&pound;&pound;</span>
+          </div>
+          <p class="dining-location">Duke Street, Padstow</p>
+          <p>A tiny, brilliant seafood bar and fishmonger. Super-fresh raw and cured fish alongside cooked dishes. The oysters and the ceviche are outstanding. It's small, so book ahead or grab a stool at the counter.</p>
+          <div class="dining-tip">Try the daily specials &mdash; whatever came off the boats that morning.</div>
+        </div>
+
+        <div class="dining-card" data-tags="casual">
+          <div class="dining-header">
+            <h3>Rojano's in the Square</h3>
+            <span class="dining-price">&pound;&pound;</span>
+          </div>
+          <p class="dining-location">Mill Square, Padstow</p>
+          <p>Paul Ainsworth's Italian. Family-friendly, great pizzas and pasta, and a more relaxed (and affordable) alternative to No. 6. The kids' menu is excellent, and the pizza dough is perfection. Wonderful for a casual family dinner.</p>
+          <div class="dining-tip">The best family restaurant in Padstow, hands down. Book for peak summer.</div>
+        </div>
+
+        <div class="dining-card" data-tags="cafe">
+          <div class="dining-header">
+            <h3>Cherry Trees Coffee House</h3>
+            <span class="dining-price">&pound;</span>
+          </div>
+          <p class="dining-location">The Strand, Padstow</p>
+          <p>A lovely little cafe perfect for morning coffee, homemade cakes, and light lunches. The cream teas are properly Cornish (jam first, obviously &mdash; this isn't Devon). A calm refuge from the harbour bustle.</p>
+          <div class="dining-tip">Cream tea done the Cornish way: scone, jam, THEN cream. Always.</div>
+        </div>
+
+        <div class="dining-card" data-tags="takeaway">
+          <div class="dining-header">
+            <h3>Chough Bakery</h3>
+            <span class="dining-price">&pound;</span>
+          </div>
+          <p class="dining-location">The Strand, Padstow</p>
+          <p>Award-winning Cornish pasties that are genuinely among the best in Cornwall. The traditional steak pasty is the star, but the cheese &amp; onion is also superb. Get there by 11am in summer or face disappointment.</p>
+          <div class="dining-tip">Traditional steak pasty, still warm, eaten on the harbour wall = peak Cornwall.</div>
+        </div>
+
+        <div class="dining-card" data-tags="cafe">
+          <div class="dining-header">
+            <h3>The Tubestation, Polzeath</h3>
+            <span class="dining-price">&pound;&pound;</span>
+          </div>
+          <p class="dining-location">Above Polzeath Beach</p>
+          <p>A Polzeath institution. Part surf shop, part cafe, part pizzeria. The wood-fired pizzas in the evening are brilliant. Sit outside on the terrace with views over the beach. Live music in summer. Has that perfect surfy, holiday vibe.</p>
+          <div class="dining-tip">Evening pizzas on the terrace with sunset views &mdash; pure holiday magic.</div>
+        </div>
+
+        <div class="dining-card" data-tags="casual">
+          <div class="dining-header">
+            <h3>The Mariners, Rock</h3>
+            <span class="dining-price">&pound;&pound;&pound;</span>
+          </div>
+          <p class="dining-location">Rock Road, Rock</p>
+          <p>Nathan Outlaw's relaxed pub restaurant in Rock. Exceptional seafood in a pub setting. The fish finger sandwich at lunch is absurdly good. Sunday roasts are outstanding. Family-friendly with a great atmosphere.</p>
+          <div class="dining-tip">Sunday lunch here is worth planning your whole week around.</div>
+        </div>
+
+        <div class="dining-card" data-tags="takeaway">
+          <div class="dining-header">
+            <h3>Malcolm Barnecutt's Bakery</h3>
+            <span class="dining-price">&pound;</span>
+          </div>
+          <p class="dining-location">Various locations</p>
+          <p>A local North Cornwall bakery chain that's been going for generations. Their pasties, sausage rolls, and heavy cake (a dense Cornish fruit cake) are all excellent. Find them in Padstow, Wadebridge, and beyond.</p>
+          <div class="dining-tip">Try the heavy cake &mdash; a dense, fruity Cornish classic that's perfect hiking fuel.</div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Claude Code Section -->
-  <section class="section" id="claude-code">
+  <!-- Camping Section -->
+  <section class="section camping-section" id="camping">
     <div class="container">
-      <h2 class="section-title">Part 2: Claude Code Basics</h2>
-      <p class="section-intro">
-        <strong>Claude Code</strong> is Anthropic's AI-powered coding assistant
-        that runs in your terminal. It can read your files, write code, run
-        commands, and help you build things &mdash; all through natural language.
-      </p>
-
-      <!-- What is Claude Code -->
-      <div class="lesson" id="lesson-what-cc">
-        <div class="lesson-header">
-          <span class="lesson-number">2.1</span>
-          <h3>What Is Claude Code?</h3>
-        </div>
-        <div class="lesson-body">
-          <p>
-            Claude Code is a CLI (command-line interface) tool that brings the
-            power of Claude, Anthropic's AI, directly into your development
-            workflow. You type what you want in plain English, and Claude Code
-            reads your project, writes or edits files, and runs commands.
-          </p>
-          <div class="feature-list">
-            <div class="feature">
-              <span class="feature-icon">&#128194;</span>
-              <div>
-                <strong>Reads your codebase</strong>
-                <p>Understands your project structure, files, and context.</p>
-              </div>
-            </div>
-            <div class="feature">
-              <span class="feature-icon">&#9999;&#65039;</span>
-              <div>
-                <strong>Writes &amp; edits files</strong>
-                <p>Creates new files or modifies existing ones based on your instructions.</p>
-              </div>
-            </div>
-            <div class="feature">
-              <span class="feature-icon">&#9654;&#65039;</span>
-              <div>
-                <strong>Runs commands</strong>
-                <p>Executes shell commands, installs packages, runs scripts, and more.</p>
-              </div>
-            </div>
-            <div class="feature">
-              <span class="feature-icon">&#128256;</span>
-              <div>
-                <strong>Works with Git</strong>
-                <p>Commits changes, creates branches, and manages pull requests.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="section-header">
+        <p class="section-tag handwritten">Our home away from home</p>
+        <h2>Mother Ivey's Bay Holiday Park</h2>
+        <p class="section-desc">The Borton family HQ. Perched on the clifftop between Harlyn Bay and Trevose Head, Mother Ivey's is simply the most spectacular campsite location in Cornwall.</p>
       </div>
 
-      <!-- Getting started -->
-      <div class="lesson" id="lesson-install-cc">
-        <div class="lesson-header">
-          <span class="lesson-number">2.2</span>
-          <h3>Getting Started</h3>
-        </div>
-        <div class="lesson-body">
-          <div class="code-block">
-            <div class="code-label">Install Claude Code</div>
-<pre><code># Install globally via npm
-npm install -g @anthropic-ai/claude-code
-
-# Navigate to your project
-cd my-budget-project
-
-# Launch Claude Code
-claude</code></pre>
+      <div class="camping-content">
+        <div class="camping-main">
+          <div class="camping-image">
+            <div class="camping-image-inner"></div>
+            <div class="camping-overlay-text">
+              <span class="handwritten">Where memories are made</span>
+            </div>
           </div>
-          <p>
-            Once launched, you're in an interactive session. Just type what you
-            want Claude to do in plain English.
-          </p>
-          <div class="code-block">
-            <div class="code-label">Example: asking Claude Code to help</div>
-<pre><code>&gt; Read the CSV file in /data/expenses.csv and summarize
-  the top 5 expense categories by total amount.
-
-Claude Code will:
-  1. Read the file
-  2. Parse the CSV
-  3. Calculate totals by category
-  4. Print a summary for you</code></pre>
+          <div class="camping-description">
+            <h3>Why Mother Ivey's is Special</h3>
+            <p>Nestled on the clifftops above its own private beach cove, Mother Ivey's Bay Holiday Park has that rare combination of spectacular natural beauty and genuine family warmth. The Park family who run it have created something really special.</p>
+            <p>Wake up to the sound of waves and seagulls, step outside your caravan or tent and you're greeted with Atlantic views that would cost a fortune in a hotel. The beach below is accessed via a steep path and is often gloriously quiet. It's the kind of place where kids can run free, where evenings are spent watching sunsets from the clifftop, and where every holiday starts to feel like coming home.</p>
           </div>
         </div>
-      </div>
 
-      <!-- Key Commands -->
-      <div class="lesson" id="lesson-cc-commands">
-        <div class="lesson-header">
-          <span class="lesson-number">2.3</span>
-          <h3>Essential Commands &amp; Patterns</h3>
-        </div>
-        <div class="lesson-body">
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>You Type</th>
-                  <th>What Happens</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>claude</code></td>
-                  <td>Starts an interactive session in the current directory</td>
-                </tr>
-                <tr>
-                  <td><code>/help</code></td>
-                  <td>Shows available slash commands and usage tips</td>
-                </tr>
-                <tr>
-                  <td><code>/commit</code></td>
-                  <td>Stages and commits your changes with an AI-generated message</td>
-                </tr>
-                <tr>
-                  <td><code>Escape</code> key</td>
-                  <td>Cancels the current operation</td>
-                </tr>
-                <tr>
-                  <td><code># prompt</code></td>
-                  <td>Use the <code>CLAUDE.md</code> file to give Claude project context</td>
-                </tr>
-              </tbody>
-            </table>
+        <div class="camping-features">
+          <div class="feature-card">
+            <span class="feature-icon">&#127958;</span>
+            <h4>Private Beach Access</h4>
+            <p>Steps down the cliff lead to Mother Ivey's own beautiful sandy cove. Often deserted &mdash; feels like your own private beach!</p>
           </div>
-          <div class="tip">
-            <strong>Tip:</strong> Create a <code>CLAUDE.md</code> file in your
-            project root to give Claude Code persistent context about your
-            project. For example: &ldquo;This repo contains monthly financial
-            reports in CSV format. The fiscal year starts April 1.&rdquo;
+          <div class="feature-card">
+            <span class="feature-icon">&#127774;</span>
+            <h4>Clifftop Views</h4>
+            <p>The sunsets from the clifftop are absolutely breathtaking. Bring a camp chair, a glass of something nice, and just watch the show.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">&#128694;</span>
+            <h4>Coast Path Access</h4>
+            <p>Step straight onto the South West Coast Path. Walk to Harlyn Bay in 15 minutes or Trevose Head Lighthouse in 30.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">&#127968;</span>
+            <h4>Great Facilities</h4>
+            <p>Well-maintained touring and static pitches, clean shower blocks, laundrette, and a small shop for essentials. Everything you need, nothing you don't.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">&#128054;</span>
+            <h4>Dog Friendly</h4>
+            <p>Dogs are welcome on many pitches and on the beach. Perfect for the family pooch who deserves a holiday too!</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">&#127759;</span>
+            <h4>Perfect Location</h4>
+            <p>Central to everything: 5 mins to Harlyn Bay, 10 to Constantine, 15 to Padstow. You couldn't ask for a better base.</p>
           </div>
         </div>
-      </div>
 
-      <!-- Claude Code + Git -->
-      <div class="lesson" id="lesson-cc-git">
-        <div class="lesson-header">
-          <span class="lesson-number">2.4</span>
-          <h3>Claude Code + Git Integration</h3>
-        </div>
-        <div class="lesson-body">
-          <p>
-            Claude Code works seamlessly with Git. You can ask it to handle your
-            entire Git workflow in plain language.
-          </p>
-          <div class="code-block">
-            <div class="code-label">Git operations via Claude Code</div>
-<pre><code>&gt; Create a new branch called "feature/q4-budget-updates",
-  add the changes I just made, and commit with a descriptive message.
-
-&gt; Show me what changed since the last commit.
-
-&gt; Create a pull request with a summary of all the changes
-  on this branch.</code></pre>
-          </div>
+        <div class="camping-quote">
+          <blockquote>
+            "It's not just a campsite, it's the place where our best family memories live. The kids measuring themselves against the same rock each year, the barbecues on the clifftop, that first glimpse of the sea when you arrive... it's home."
+          </blockquote>
+          <cite class="handwritten">&mdash; A Borton Family Sentiment</cite>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Finance Workflows Section -->
-  <section class="section section-alt" id="finance-workflows">
+  <!-- Adventures Section -->
+  <section class="section adventures-section" id="adventures">
     <div class="container">
-      <h2 class="section-title">Part 3: Real Finance Workflows</h2>
-      <p class="section-intro">
-        Here are practical scenarios showing how a finance manager at a small
-        software company can combine GitHub and Claude Code to work smarter.
-      </p>
-
-      <!-- Workflow 1 -->
-      <div class="workflow">
-        <div class="workflow-header">
-          <span class="workflow-number">Workflow 1</span>
-          <h3>Automated Expense Report Generation</h3>
-        </div>
-        <div class="workflow-body">
-          <p class="workflow-scenario">
-            <strong>Scenario:</strong> Every month you export expense data from
-            your accounting tool as a CSV. You need to categorize, summarize,
-            and produce a PDF report for leadership.
-          </p>
-          <div class="workflow-steps">
-            <div class="step">
-              <span class="step-num">1</span>
-              <div>
-                <strong>Store your data in a GitHub repo</strong>
-                <p>Create a repo called <code>finance-reports</code> and push your CSV files there each month.</p>
-              </div>
-            </div>
-            <div class="step">
-              <span class="step-num">2</span>
-              <div>
-                <strong>Ask Claude Code to build the script</strong>
-                <div class="code-block compact">
-<pre><code>&gt; Write a Python script that reads data/expenses-2026-01.csv,
-  groups expenses by category, calculates totals and percentages,
-  and outputs a formatted markdown summary report.</code></pre>
-                </div>
-              </div>
-            </div>
-            <div class="step">
-              <span class="step-num">3</span>
-              <div>
-                <strong>Review, commit, and reuse</strong>
-                <p>Claude Code generates the script. Review it, commit via <code>/commit</code>, and reuse it every month with new data.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="section-header">
+        <p class="section-tag handwritten">Beyond the beach</p>
+        <h2>Family Adventures</h2>
+        <p class="section-desc">There's so much more to this corner of Cornwall than just beaches (amazing as they are). Here are the Borton family's favourite things to do.</p>
       </div>
 
-      <!-- Workflow 2 -->
-      <div class="workflow">
-        <div class="workflow-header">
-          <span class="workflow-number">Workflow 2</span>
-          <h3>Budget vs. Actuals Tracking</h3>
-        </div>
-        <div class="workflow-body">
-          <p class="workflow-scenario">
-            <strong>Scenario:</strong> You maintain a budget spreadsheet and want
-            to track how actuals compare over time with full version history.
-          </p>
-          <div class="workflow-steps">
-            <div class="step">
-              <span class="step-num">1</span>
-              <div>
-                <strong>Version your budget as CSV/JSON</strong>
-                <p>Store budget data in a machine-readable format in Git so every change is tracked.</p>
-              </div>
-            </div>
-            <div class="step">
-              <span class="step-num">2</span>
-              <div>
-                <strong>Use Claude Code for variance analysis</strong>
-                <div class="code-block compact">
-<pre><code>&gt; Compare budget.csv and actuals-jan.csv. Show me every
-  line item where actuals exceed budget by more than 10%.
-  Format the output as a table.</code></pre>
-                </div>
-              </div>
-            </div>
-            <div class="step">
-              <span class="step-num">3</span>
-              <div>
-                <strong>Track changes via pull requests</strong>
-                <p>When updating the budget, create a branch, make changes, and submit a PR. Stakeholders review and approve before merge.</p>
-              </div>
-            </div>
+      <div class="adventures-grid">
+
+        <div class="adventure-card" onclick="toggleAdventure(this)">
+          <div class="adventure-front">
+            <span class="adventure-icon">&#127754;</span>
+            <h3>Learn to Surf</h3>
+            <p class="adventure-hint">Click to discover more</p>
+          </div>
+          <div class="adventure-back">
+            <h3>Learn to Surf</h3>
+            <p>Polzeath is one of the best places in the UK to learn to surf. The Surf's Up school and the Polzeath Surf Academy are both brilliant for beginners of all ages. The gentle waves in the inner bay are perfect for standing up for the first time. Book a family lesson &mdash; it's an absolute riot.</p>
+            <span class="adventure-location">Polzeath Beach</span>
           </div>
         </div>
+
+        <div class="adventure-card" onclick="toggleAdventure(this)">
+          <div class="adventure-front">
+            <span class="adventure-icon">&#128692;</span>
+            <h3>Cycle the Camel Trail</h3>
+            <p class="adventure-hint">Click to discover more</p>
+          </div>
+          <div class="adventure-back">
+            <h3>Cycle the Camel Trail</h3>
+            <p>Hire bikes from Padstow Cycle Hire or Trail Bike Hire and ride the old railway line along the Camel Estuary to Wadebridge (5.5 miles) or even Bodmin (11 miles). Flat, scenic, and suitable for all ages. Stop at the Camel Valley Vineyard for a tasting &mdash; they make award-winning sparkling wine!</p>
+            <span class="adventure-location">Padstow to Wadebridge</span>
+          </div>
+        </div>
+
+        <div class="adventure-card" onclick="toggleAdventure(this)">
+          <div class="adventure-front">
+            <span class="adventure-icon">&#128031;</span>
+            <h3>Coasteering</h3>
+            <p class="adventure-hint">Click to discover more</p>
+          </div>
+          <div class="adventure-back">
+            <h3>Coasteering</h3>
+            <p>For older kids and adventurous parents! Scramble along the rocks, jump off cliffs into the sea, explore sea caves, and swim through gullies. Cornish Rock Tors run brilliant sessions around the Harlyn and Constantine coast. Wetsuits and helmets provided. An unforgettable adrenaline rush!</p>
+            <span class="adventure-location">Harlyn / Constantine area</span>
+          </div>
+        </div>
+
+        <div class="adventure-card" onclick="toggleAdventure(this)">
+          <div class="adventure-front">
+            <span class="adventure-icon">&#128032;</span>
+            <h3>Boat Trips</h3>
+            <p class="adventure-hint">Click to discover more</p>
+          </div>
+          <div class="adventure-back">
+            <h3>Boat Trips &amp; Fishing</h3>
+            <p>Take a mackerel fishing trip from Padstow harbour &mdash; the kids will love pulling in their own fish. Speed boat trips out to see the seals and dolphins are also available. On calmer days, hire a kayak or SUP board from Rock and explore the estuary at your own pace.</p>
+            <span class="adventure-location">Padstow Harbour</span>
+          </div>
+        </div>
+
+        <div class="adventure-card" onclick="toggleAdventure(this)">
+          <div class="adventure-front">
+            <span class="adventure-icon">&#129446;</span>
+            <h3>Seal Watching</h3>
+            <p class="adventure-hint">Click to discover more</p>
+          </div>
+          <div class="adventure-back">
+            <h3>Seal Watching</h3>
+            <p>The Atlantic grey seals around Trevose Head are magnificent. Walk the coast path from Mother Ivey's towards the lighthouse and you'll often spot them bobbing in the water or hauled out on the rocks below. September-October is pupping season. Bring binoculars!</p>
+            <span class="adventure-location">Trevose Head coast path</span>
+          </div>
+        </div>
+
+        <div class="adventure-card" onclick="toggleAdventure(this)">
+          <div class="adventure-front">
+            <span class="adventure-icon">&#127793;</span>
+            <h3>Rainy Day Ideas</h3>
+            <p class="adventure-hint">Click to discover more</p>
+          </div>
+          <div class="adventure-back">
+            <h3>When It Rains...</h3>
+            <p>It's Cornwall, so it will rain! Try: the National Lobster Hatchery (Padstow), Prideaux Place house tour, Camel Creek Adventure Park (near Wadebridge &mdash; great for younger kids), the cinema in Wadebridge, cream tea at Trerethern Farm, or just embrace it and go rock pooling in the rain &mdash; the beaches are beautifully empty!</p>
+            <span class="adventure-location">Various locations</span>
+          </div>
+        </div>
+
+        <div class="adventure-card" onclick="toggleAdventure(this)">
+          <div class="adventure-front">
+            <span class="adventure-icon">&#127824;</span>
+            <h3>Camel Valley Vineyard</h3>
+            <p class="adventure-hint">Click to discover more</p>
+          </div>
+          <div class="adventure-back">
+            <h3>Camel Valley Vineyard</h3>
+            <p>Award-winning Cornish wines! Book a vineyard tour and tasting &mdash; their sparkling wine has beaten champagne in blind tastings. About 20 minutes from Padstow along the Camel Valley. A brilliant grown-up treat while someone else watches the kids for an afternoon!</p>
+            <span class="adventure-location">Nanstallon, near Bodmin</span>
+          </div>
+        </div>
+
+        <div class="adventure-card" onclick="toggleAdventure(this)">
+          <div class="adventure-front">
+            <span class="adventure-icon">&#127748;</span>
+            <h3>Tintagel Castle</h3>
+            <p class="adventure-hint">Click to discover more</p>
+          </div>
+          <div class="adventure-back">
+            <h3>Tintagel Castle</h3>
+            <p>A brilliant day trip up the coast. The legendary birthplace of King Arthur, perched dramatically on the clifftops. The new bridge across to the island is stunning. Merlin's Cave below is atmospheric and the kids will love the mythology. About 40 minutes drive from Padstow.</p>
+            <span class="adventure-location">Tintagel (40 min drive)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips Section -->
+  <section class="section tips-section" id="tips">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag handwritten">Wisdom from experience</p>
+        <h2>Borton Family Tips &amp; Tricks</h2>
+        <p class="section-desc">Years of Cornwall holidays have taught us a thing or two. Here's the accumulated wisdom of the Borton family, passed down through the generations.</p>
       </div>
 
-      <!-- Workflow 3 -->
-      <div class="workflow">
-        <div class="workflow-header">
-          <span class="workflow-number">Workflow 3</span>
-          <h3>Vendor Contract &amp; License Management</h3>
+      <div class="tips-grid">
+
+        <div class="tip-card">
+          <div class="tip-number">01</div>
+          <h3>Tide Times Are Everything</h3>
+          <p>Check the tide times every morning &mdash; they dictate your whole day. Many beaches are best at mid to low tide. Harlyn is the exception &mdash; it's lovely at high tide too. The MagicSeaweed app is your best friend for tides, surf and weather all in one place.</p>
         </div>
-        <div class="workflow-body">
-          <p class="workflow-scenario">
-            <strong>Scenario:</strong> Your company uses dozens of SaaS tools.
-            You need to track renewal dates, costs, and license counts.
-          </p>
-          <div class="workflow-steps">
-            <div class="step">
-              <span class="step-num">1</span>
-              <div>
-                <strong>Maintain a vendor registry in Git</strong>
-                <p>Keep a <code>vendors.json</code> file with vendor name, cost, renewal date, and license count.</p>
-              </div>
-            </div>
-            <div class="step">
-              <span class="step-num">2</span>
-              <div>
-                <strong>Ask Claude Code for renewal alerts</strong>
-                <div class="code-block compact">
-<pre><code>&gt; Read vendors.json and list all vendors with renewal dates
-  in the next 60 days. Include the annual cost and flag
-  anything over $10,000 for renegotiation review.</code></pre>
-                </div>
-              </div>
-            </div>
-            <div class="step">
-              <span class="step-num">3</span>
-              <div>
-                <strong>Automate with GitHub Actions</strong>
-                <p>Set up a GitHub Action that runs the renewal check script weekly and opens an issue when renewals are approaching.</p>
-              </div>
-            </div>
-          </div>
+
+        <div class="tip-card">
+          <div class="tip-number">02</div>
+          <h3>Book Restaurants Early</h3>
+          <p>In peak summer (late July/August), the popular restaurants get booked up fast. Reserve Rojano's, The Seafood Restaurant, No. 6, and The Mariners as far ahead as possible. The pubs and takeaways are fine for walk-ins.</p>
         </div>
+
+        <div class="tip-card">
+          <div class="tip-number">03</div>
+          <h3>Beach Parking Hacks</h3>
+          <p>Polzeath car park fills up fast in summer. Get there before 10am or park at the overflow up the hill. For Padstow, use the main car park at the top and walk down. Constantine Bay NT car park is worth the membership. Harlyn rarely fills up!</p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-number">04</div>
+          <h3>The Shelter Strategy</h3>
+          <p>Wind from the SW? Head to Harlyn (sheltered). Wind from the N/NE? Constantine or Polzeath will be calmer. East wind? Lucky you &mdash; everywhere will be glorious. If it's blowing a hooley from the west, the Camel Estuary beaches (Daymer, Rock) will be sheltered.</p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-number">05</div>
+          <h3>Always Pack...</h3>
+          <p>Wetsuits (even in August the Atlantic is bracing!), a windbreak, reef shoes for rock pooling, binoculars for seal/bird spotting, a good waterproof jacket, and factor 50 suncream &mdash; the Cornish sun is deceptively strong, especially with the sea breeze.</p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-number">06</div>
+          <h3>Secret Sunset Spots</h3>
+          <p>The best sunsets? Trevose Head clifftop (from Mother Ivey's), the War Memorial above Padstow, the terrace at The Oyster Catcher in Polzeath, or simply the clifftop field above Constantine. Pack a flask of something warming &mdash; even summer evenings get cool.</p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-number">07</div>
+          <h3>The Cream Tea Rule</h3>
+          <p>You're in CORNWALL. It's jam first, then cream on top of the scone. Anyone who puts cream first is doing it the Devon way, and we don't do that here. This is non-negotiable.</p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-number">08</div>
+          <h3>Explore Off-Peak</h3>
+          <p>June and September are magical &mdash; fewer crowds, often better weather, cheaper accommodation, and the sea is actually warmer in September than June! The light in early September is gorgeous for photos too.</p>
+        </div>
+
       </div>
 
-      <!-- Workflow 4 -->
-      <div class="workflow">
-        <div class="workflow-header">
-          <span class="workflow-number">Workflow 4</span>
-          <h3>Financial Dashboard Prototyping</h3>
-        </div>
-        <div class="workflow-body">
-          <p class="workflow-scenario">
-            <strong>Scenario:</strong> You want a simple internal dashboard to
-            visualize monthly revenue, burn rate, and runway &mdash; without
-            waiting for the engineering team.
-          </p>
-          <div class="workflow-steps">
-            <div class="step">
-              <span class="step-num">1</span>
-              <div>
-                <strong>Describe what you need to Claude Code</strong>
-                <div class="code-block compact">
-<pre><code>&gt; Build an HTML dashboard that reads data from
-  financials.json and displays:
-  - Monthly revenue bar chart
-  - Burn rate trend line
-  - Runway calculation (cash / avg monthly burn)
-  Use Chart.js for the visualizations.</code></pre>
-                </div>
-              </div>
-            </div>
-            <div class="step">
-              <span class="step-num">2</span>
-              <div>
-                <strong>Iterate with Claude Code</strong>
-                <p>Ask Claude to refine colors, add filters, or include new metrics. Each change is a new commit.</p>
-              </div>
-            </div>
-            <div class="step">
-              <span class="step-num">3</span>
-              <div>
-                <strong>Deploy via GitHub Pages</strong>
-                <p>Push to GitHub and enable Pages for free hosting. Your dashboard is live at <code>your-org.github.io/finance-dashboard</code>.</p>
-              </div>
-            </div>
-          </div>
+      <!-- Interactive Packing Checklist -->
+      <div class="checklist-section">
+        <h3 class="handwritten">Holiday Packing Checklist</h3>
+        <p>Tick off as you pack! (Your progress is saved locally.)</p>
+        <div class="checklist" id="packingChecklist">
+          <label class="check-item"><input type="checkbox" data-item="wetsuits"> Wetsuits &amp; rash vests</label>
+          <label class="check-item"><input type="checkbox" data-item="suncream"> Factor 50 suncream</label>
+          <label class="check-item"><input type="checkbox" data-item="windbreak"> Windbreak</label>
+          <label class="check-item"><input type="checkbox" data-item="bodyboards"> Bodyboards</label>
+          <label class="check-item"><input type="checkbox" data-item="reefshoes"> Reef shoes for rock pooling</label>
+          <label class="check-item"><input type="checkbox" data-item="binoculars"> Binoculars</label>
+          <label class="check-item"><input type="checkbox" data-item="waterproofs"> Waterproof jackets</label>
+          <label class="check-item"><input type="checkbox" data-item="towels"> Beach towels (lots!)</label>
+          <label class="check-item"><input type="checkbox" data-item="bucketspade"> Bucket &amp; spade</label>
+          <label class="check-item"><input type="checkbox" data-item="campchairs"> Camp chairs</label>
+          <label class="check-item"><input type="checkbox" data-item="bbq"> Portable BBQ &amp; charcoal</label>
+          <label class="check-item"><input type="checkbox" data-item="coolbox"> Cool box &amp; ice packs</label>
+          <label class="check-item"><input type="checkbox" data-item="crablines"> Crab lines &amp; bait</label>
+          <label class="check-item"><input type="checkbox" data-item="books"> Holiday books</label>
+          <label class="check-item"><input type="checkbox" data-item="games"> Card games &amp; board games</label>
+          <label class="check-item"><input type="checkbox" data-item="torch"> Torch for evening walks</label>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Cheat Sheet -->
-  <section class="section" id="cheatsheet">
-    <div class="container">
-      <h2 class="section-title">Quick-Start Cheat Sheet</h2>
-      <p class="section-intro">
-        Copy-paste these commands to get going. Replace placeholders with your
-        actual project details.
-      </p>
-
-      <div class="cheatsheet-grid">
-        <div class="cheat-card">
-          <h4>Set Up a Finance Repo</h4>
-          <div class="code-block compact">
-<pre><code>mkdir finance-reports &amp;&amp; cd finance-reports
-git init
-echo "# Finance Reports" &gt; README.md
-git add . &amp;&amp; git commit -m "Initial commit"
-gh repo create your-org/finance-reports --private --push</code></pre>
-          </div>
-        </div>
-
-        <div class="cheat-card">
-          <h4>Daily Workflow</h4>
-          <div class="code-block compact">
-<pre><code># Pull latest changes
-git pull origin main
-
-# Start Claude Code session
-claude
-
-# Ask for help with your task
-&gt; Read this month's expense CSV and flag any
-  transactions over $5,000 that aren't in the
-  approved vendor list.</code></pre>
-          </div>
-        </div>
-
-        <div class="cheat-card">
-          <h4>Submit Changes for Review</h4>
-          <div class="code-block compact">
-<pre><code># Create a branch for your changes
-git checkout -b update/march-actuals
-
-# Use Claude Code to commit
-/commit
-
-# Push and create a PR
-git push -u origin update/march-actuals
-gh pr create --title "Add March actuals" \
-  --body "Updated actuals for March. See summary."</code></pre>
-          </div>
-        </div>
-
-        <div class="cheat-card">
-          <h4>CLAUDE.md for Finance Projects</h4>
-          <div class="code-block compact">
-<pre><code># CLAUDE.md - Project Context
-
-This repo contains monthly financial data for
-Acme Software Inc.
-
-- Fiscal year: April 1 - March 31
-- Currency: USD
-- Data format: CSV with headers
-- Key files:
-  - data/ - monthly expense and revenue CSVs
-  - scripts/ - Python analysis scripts
-  - reports/ - generated summaries</code></pre>
-          </div>
-        </div>
-      </div>
+  <!-- Weather Widget -->
+  <div class="weather-widget" id="weatherWidget">
+    <button class="weather-toggle" onclick="toggleWeather()">
+      <span>&#9729;</span>
+    </button>
+    <div class="weather-panel" id="weatherPanel">
+      <h4>Cornwall Weather &amp; Tides</h4>
+      <p class="weather-note">Check before you head out:</p>
+      <a href="https://www.metoffice.gov.uk/weather/forecast/gbnqp7kxm" target="_blank" rel="noopener" class="weather-link">Met Office &mdash; Padstow</a>
+      <a href="https://magicseaweed.com/Polzeath-Surf-Report/1449/" target="_blank" rel="noopener" class="weather-link">MagicSeaweed &mdash; Polzeath</a>
+      <a href="https://www.tidetimes.org.uk/padstow-tide-times" target="_blank" rel="noopener" class="weather-link">Tide Times &mdash; Padstow</a>
     </div>
-  </section>
-
-  <!-- Best Practices -->
-  <section class="section section-alt" id="best-practices">
-    <div class="container">
-      <h2 class="section-title">Best Practices for Finance Managers</h2>
-      <div class="practices-grid">
-        <div class="practice">
-          <div class="practice-do">DO</div>
-          <h4>Use private repositories</h4>
-          <p>Financial data is sensitive. Always use private repos and restrict access to authorized team members.</p>
-        </div>
-        <div class="practice">
-          <div class="practice-do">DO</div>
-          <h4>Write descriptive commit messages</h4>
-          <p>Future you (and auditors) will thank you. &ldquo;Update Q3 forecast with revised SaaS revenue&rdquo; beats &ldquo;changes&rdquo;.</p>
-        </div>
-        <div class="practice">
-          <div class="practice-do">DO</div>
-          <h4>Use branches for budget iterations</h4>
-          <p>Keep the approved budget on <code>main</code>. Explore changes on branches and merge only after approval.</p>
-        </div>
-        <div class="practice">
-          <div class="practice-do">DO</div>
-          <h4>Create a CLAUDE.md file</h4>
-          <p>Give Claude Code context about your project so it gives better, more relevant answers every session.</p>
-        </div>
-        <div class="practice">
-          <div class="practice-dont">DON'T</div>
-          <h4>Commit secrets or credentials</h4>
-          <p>Never put API keys, passwords, or tokens in your repo. Use a <code>.gitignore</code> file and environment variables.</p>
-        </div>
-        <div class="practice">
-          <div class="practice-dont">DON'T</div>
-          <h4>Store raw PII in repos</h4>
-          <p>Employee SSNs, bank accounts, etc. should not be in Git. Use anonymized or aggregated data instead.</p>
-        </div>
-        <div class="practice">
-          <div class="practice-dont">DON'T</div>
-          <h4>Skip code review on scripts</h4>
-          <p>Even if Claude Code wrote the script, have someone review it via a PR before running it on real financial data.</p>
-        </div>
-        <div class="practice">
-          <div class="practice-dont">DON'T</div>
-          <h4>Blindly trust AI output</h4>
-          <p>Always verify calculations and summaries against source data. AI is a powerful assistant, not a replacement for diligence.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Glossary -->
-  <section class="section" id="glossary">
-    <div class="container">
-      <h2 class="section-title">Glossary</h2>
-      <div class="glossary-grid">
-        <div class="glossary-item">
-          <dt>CLI</dt>
-          <dd>Command Line Interface &mdash; a text-based way to interact with your computer. Claude Code runs in a CLI.</dd>
-        </div>
-        <div class="glossary-item">
-          <dt>Git</dt>
-          <dd>A distributed version control system that tracks changes to files over time.</dd>
-        </div>
-        <div class="glossary-item">
-          <dt>GitHub</dt>
-          <dd>A cloud platform built on Git for hosting repositories and collaborating with others.</dd>
-        </div>
-        <div class="glossary-item">
-          <dt>GitHub Actions</dt>
-          <dd>An automation feature in GitHub that can run scripts on a schedule or in response to events like pushes or PRs.</dd>
-        </div>
-        <div class="glossary-item">
-          <dt>GitHub Pages</dt>
-          <dd>Free static website hosting from a GitHub repository. Great for dashboards and documentation.</dd>
-        </div>
-        <div class="glossary-item">
-          <dt>Claude Code</dt>
-          <dd>Anthropic's AI coding assistant that runs in the terminal and helps with code, data, and automation tasks.</dd>
-        </div>
-        <div class="glossary-item">
-          <dt>CLAUDE.md</dt>
-          <dd>A markdown file in your project root that gives Claude Code persistent context about the project.</dd>
-        </div>
-        <div class="glossary-item">
-          <dt>PR (Pull Request)</dt>
-          <dd>A request to merge changes from one branch into another, with review and approval workflow.</dd>
-        </div>
-        <div class="glossary-item">
-          <dt>.gitignore</dt>
-          <dd>A file that tells Git which files or directories to exclude from version control (e.g., credentials, large binaries).</dd>
-        </div>
-        <div class="glossary-item">
-          <dt>npm</dt>
-          <dd>Node Package Manager &mdash; used to install JavaScript tools and libraries, including Claude Code.</dd>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>
-        Built as a learning resource for finance professionals working in
-        software companies. Not affiliated with GitHub or Anthropic.
-      </p>
-      <p class="footer-links">
-        <a href="https://docs.github.com" target="_blank" rel="noopener">GitHub Docs</a>
-        <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" rel="noopener">Claude Code Docs</a>
-      </p>
-    </div>
-  </footer>
+  </div>
 
   <!-- Back to top -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8679;</button>
+  <button class="back-to-top" id="backToTop" onclick="scrollToTop()">&#8679;</button>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3><span class="logo-icon">&#9875;</span> The Borton Family Cornwall Guide</h3>
+          <p>Made with love, sand between the toes, and far too many pasties.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#beaches">Beaches</a></li>
+            <li><a href="#walks">Walks</a></li>
+            <li><a href="#padstow">Padstow</a></li>
+            <li><a href="#dining">Dining</a></li>
+            <li><a href="#camping">Camping</a></li>
+            <li><a href="#adventures">Adventures</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="https://www.visitcornwall.com" target="_blank" rel="noopener">Visit Cornwall</a></li>
+            <li><a href="https://www.motheriveys.co.uk" target="_blank" rel="noopener">Mother Ivey's Bay</a></li>
+            <li><a href="https://www.southwestcoastpath.org.uk" target="_blank" rel="noopener">SW Coast Path</a></li>
+            <li><a href="https://www.nationaltrust.org.uk" target="_blank" rel="noopener">National Trust</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; The Borton Family Cornwall Holiday Guide. All adventures reserved.</p>
+        <p class="handwritten">See you next summer! &#9875;</p>
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
